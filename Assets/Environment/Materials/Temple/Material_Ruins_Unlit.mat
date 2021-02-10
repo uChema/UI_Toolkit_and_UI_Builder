@@ -24,9 +24,22 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats: []
     m_Colors:
     - Color_353D90DF: {r: 0, g: 0, b: 0, a: 0}
     - _FogColor: {r: 0.9245283, g: 0.8940047, b: 0.78061587, a: 0.30980393}
     - _TimeOfDay: {r: 1, g: 1, b: 1, a: 0}
     - _TintColor: {r: 0.990566, g: 0.96485984, b: 0.87375396, a: 1}
+  m_BuildTextureStacks: []

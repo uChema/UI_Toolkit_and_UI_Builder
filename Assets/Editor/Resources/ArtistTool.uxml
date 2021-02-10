@@ -1,28 +1,30 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
-    <ui:Template name="GradientLightColor" src="GradientLightColor.uxml" />
     <ui:Template name="ButtonComponent" src="ButtonComponent.uxml" />
+    <ui:Template name="GradientUI" src="GradientUI.uxml" />
+    <ui:Template name="WindComponent" src="WindComponent.uxml" />
     <Style src="ArtistTool.uss" />
+    <Style src="WindComponent.uss" />
     <ui:VisualElement name="Container" style="width: 100%; height: 100%;">
         <ui:ScrollView name="ScrollContainer">
             <ui:VisualElement name="TimedElements">
                 <ui:Label text="Timed Elements" name="Title" class="Title" />
                 <ui:Slider label="Time" value="42" high-value="1" name="Time" binding-path="time" style="margin: 20px; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0;" />
                 <ui:Foldout text="Gradients" name="Gradients">
-                    <ui:Instance template="GradientLightColor" name="SkyGradient" />
-                    <ui:Instance template="GradientLightColor" name="RuinsGradient" class="templates" />
-                    <ui:Instance template="GradientLightColor" name="TreesGradient" class="templates" />
-                    <ui:Instance template="GradientLightColor" name="RimColor" class="templates" />
+                    <ui:Instance template="GradientUI" name="SkyGradient" />
+                    <ui:Instance template="GradientUI" name="RuinsGradient" />
+                    <ui:Instance template="GradientUI" name="TreesGradient" />
+                    <ui:Instance template="GradientUI" name="RimColor" />
                 </ui:Foldout>
                 <ui:Foldout text="Lights" name="Lights">
                     <ui:VisualElement name="Sunlight" class="Lights">
                         <ui:Label text="Sunlight" name="LightTitle" />
-                        <ui:Instance template="GradientLightColor" name="LightGradient" class="templates" />
+                        <ui:Instance template="GradientUI" name="LightGradient" />
                         <uie:ObjectField label="Sprite" name="Sprite" style="display: none; visibility: hidden;" />
                         <uie:FloatField label="Intensity" value="42.2" name="Intensity" />
                     </ui:VisualElement>
                     <ui:VisualElement name="GrassLight" class="Lights">
                         <ui:Label text="Grass Light" name="LightTitle" />
-                        <ui:Instance template="GradientLightColor" name="LightGradient" class="templates" />
+                        <ui:Instance template="GradientUI" name="LightGradient" />
                         <uie:FloatField label="Intensity" value="42.2" name="Intensity" binding-path="m_Intensity" />
                     </ui:VisualElement>
                     <ui:VisualElement name="CaveHoleLight" class="Lights">
@@ -36,6 +38,7 @@
             </ui:VisualElement>
             <ui:VisualElement name="ConstantElement">
                 <ui:Label text="Constant Elements" name="Title" class="Title" />
+                <ui:Instance template="WindComponent" name="WindComponent" />
                 <ui:Foldout text="Postprocessing" name="Postprocessing">
                     <ui:VisualElement name="WhiteBalance" class="Lights">
                         <ui:Label text="White Balance" name="Title" />
@@ -62,6 +65,8 @@
                     <uie:EnumField label="Render Mode" value="Center" name="RenderMode" />
                     <uie:ObjectField label="Render Material" name="Material" />
                 </ui:Foldout>
+                <ui:Label text="Constant Elements" name="Title" />
+                <ui:Instance template="GradientUI" name="GradientUI" />
             </ui:VisualElement>
             <ui:Instance template="ButtonComponent" name="Buttons" />
         </ui:ScrollView>

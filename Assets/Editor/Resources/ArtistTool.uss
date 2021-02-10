@@ -1,3 +1,11 @@
 .templates {
     display: flex;
 }
+
+.Title {
+    font-size: 20px;
+    -unity-font-style: bold;
+    border-bottom-color: rgb(108, 108, 108);
+    border-bottom-width: 2px;
+    margin-bottom: 2px;
+}

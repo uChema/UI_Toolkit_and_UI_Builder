@@ -412,18 +412,20 @@ public class ArtistToolControllerEditor : EditorWindow
         SerializedObject serialized_SunSpot = new SerializedObject(SunSpot_Group);
 
         VisualElement sunLightVisualElement = root.Q<VisualElement>(name: "Sunlight");
-        GradientField sunLightGradient = sunLightVisualElement.Q<VisualElement>(name: "LightGradient").Q<GradientField>();
-        FloatField sunLightIntensity = root.Q<FloatField>(name: "Intensity");
-        if(sunLightGradient!=null)
+        if (sunLightVisualElement.Q<VisualElement>(name: "LightGradient") != null)
         {
-            sunLightGradient.bindingPath = "gradient";
-            sunLightGradient.Bind(serialized_SunSpot);
-            sunLightGradient.label = "Gradient";
-        }
+            GradientField sunLightGradient = sunLightVisualElement.Q<VisualElement>(name: "LightGradient").Q<GradientField>();
+            FloatField sunLightIntensity = root.Q<FloatField>(name: "Intensity");
+            if (sunLightGradient != null)
+            {
+                sunLightGradient.bindingPath = "gradient";
+                sunLightGradient.Bind(serialized_SunSpot); 
+                sunLightGradient.label = "Gradient";
+            }
        
-
         sunLightIntensity.value = GetSpotLightIntensity();
         sunLightIntensity.RegisterCallback<ChangeEvent<float>>(ChangeIntensitySpotLightsEvent);
+ }
 
         #endregion
 
@@ -431,21 +433,23 @@ public class ArtistToolControllerEditor : EditorWindow
         SerializedObject serialized_GrassLight_Group = new SerializedObject(GrassLight_Group);
 
         VisualElement grassLightVisualElement = root.Q<VisualElement>(name: "GrassLight");
-        GradientField grassLightGradient = grassLightVisualElement.Q<VisualElement>(name: "LightGradient").Q<GradientField>();
-        FloatField grassLightIntensity = grassLightVisualElement.Q<FloatField>(name: "Intensity");
-
-        if (grassLightGradient != null)
+        if (grassLightVisualElement.Q<VisualElement>(name: "LightGradient") != null)
         {
-            grassLightGradient.bindingPath = "gradient"; 
-            grassLightGradient.Bind(serialized_GrassLight_Group);
-            grassLightGradient.label = "Gradient";
+            GradientField grassLightGradient = grassLightVisualElement.Q<VisualElement>(name: "LightGradient").Q<GradientField>();
+            FloatField grassLightIntensity = grassLightVisualElement.Q<FloatField>(name: "Intensity");
+
+            if (grassLightGradient != null)
+            {
+                grassLightGradient.bindingPath = "gradient";
+                grassLightGradient.Bind(serialized_GrassLight_Group);
+                grassLightGradient.label = "Gradient";
+            }
+
+            grassLightIntensity.value = GrassLight.intensity;
+
+            SerializedObject serialized_GrassLight = new SerializedObject(GrassLight);
+            grassLightIntensity.Bind(serialized_GrassLight);
         }
-
-        grassLightIntensity.value = GrassLight.intensity;
-
-        SerializedObject serialized_GrassLight = new SerializedObject(GrassLight);
-        grassLightIntensity.Bind(serialized_GrassLight);
-
         #endregion
 
         #region cave Light 
@@ -693,22 +697,27 @@ public class ArtistToolControllerEditor : EditorWindow
             if (root.Q<VisualElement>(name: "SkyGradient") != null)
             if(root.Q<VisualElement>(name: "SkyGradient").Q<GradientField>() != null)
                 root.Q<VisualElement>(name: "SkyGradient").Q<GradientField>().value = initialSceneValues.SkyGradient;
-        if (root.Q<VisualElement>(name: "RuinsGradient").Q<GradientField>() != null)
+        if (root.Q<VisualElement>(name: "RuinsGradient") != null) 
+            if (root.Q<VisualElement>(name: "RuinsGradient").Q<GradientField>() != null)
             root.Q<VisualElement>(name: "RuinsGradient").Q<GradientField>().value = initialSceneValues.RuinsGradient;
-        if (root.Q<VisualElement>(name: "TreesGradient").Q<GradientField>() != null)
+        if (root.Q<VisualElement>(name: "TreesGradient") != null)
+            if (root.Q<VisualElement>(name: "TreesGradient").Q<GradientField>() != null)
             root.Q<VisualElement>(name: "TreesGradient").Q<GradientField>().value = initialSceneValues.TreesGradient;
-        if (root.Q<VisualElement>(name: "RimColor").Q<GradientField>() != null)
+        if (root.Q<VisualElement>(name: "RimColor") != null)
+            if (root.Q<VisualElement>(name: "RimColor").Q<GradientField>() != null)
             root.Q<VisualElement>(name: "RimColor").Q<GradientField>().value = initialSceneValues.RimGradient;
-
+         
         if (root.Q<VisualElement>(name: "Sunlight") != null)
-        {
-            if (root.Q<VisualElement>(name: "Sunlight").Q<VisualElement>(name: "LightGradient").Q<GradientField>() != null)
+        { 
+            if (root.Q<VisualElement>(name: "Sunlight").Q<VisualElement>(name: "LightGradient")!=null)
+               if (root.Q<VisualElement>(name: "Sunlight").Q<VisualElement>(name: "LightGradient").Q<GradientField>() != null)
                 root.Q<VisualElement>(name: "Sunlight").Q<VisualElement>(name: "LightGradient").Q<GradientField>().value = initialSceneValues.SunlightGradient;
             root.Q<VisualElement>(name: "Sunlight").Q<FloatField>(name: "Intensity").value = initialSceneValues.SunlightIntencity;
-        }
+        } 
         if (root.Q<VisualElement>(name: "GrassLight") != null)
         {
-            if (root.Q<VisualElement>(name: "GrassLight").Q<VisualElement>(name: "LightGradient").Q<GradientField>() != null)
+            if (root.Q<VisualElement>(name: "GrassLight").Q<VisualElement>(name: "LightGradient")!= null)
+                if (root.Q<VisualElement>(name: "GrassLight").Q<VisualElement>(name: "LightGradient").Q<GradientField>() != null)
                 root.Q<VisualElement>(name: "GrassLight").Q<VisualElement>(name: "LightGradient").Q<GradientField>().value = initialSceneValues.GrassLightGradient;
             root.Q<VisualElement>(name: "GrassLight").Q<FloatField>(name: "Intensity").value = initialSceneValues.GrassLightIntensity;
         }

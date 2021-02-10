@@ -1,6 +1,0 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
-    <uie:GradientField label="Gradient" name="Gradient">
-        <Style src="/Assets/GradientStyle.uss" />
-        <ui:VisualElement name="VisualisationColor" class="visualiser" />
-    </uie:GradientField>
-</ui:UXML>

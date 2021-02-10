@@ -1,0 +1,99 @@
+.Lights {
+    margin-left: 3px;
+    margin-right: 3px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.unity-foldout__toggle {
+    background-color: rgb(108, 108, 108);
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    color: rgb(255, 255, 255);
+}
+
+.title {
+    font-size: 20px;
+    -unity-font-style: bold;
+    border-bottom-color: rgb(143, 143, 143);
+    border-bottom-width: 1px;
+    margin-left: 2%;
+    margin-bottom: 3px;
+}
+
+.preview {
+    width: 20px;
+    height: 20px;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-left-color: rgb(94, 94, 94);
+    border-right-color: rgb(94, 94, 94);
+    border-top-color: rgb(94, 94, 94);
+    border-bottom-color: rgb(94, 94, 94);
+    margin-left: 2px;
+}
+
+.unity-float-field {
+    align-items: flex-end;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.unity-float-field__input {
+    background-color: rgb(235, 235, 235);
+    width: 20%;
+    max-width: 60px;
+    max-height: 100px;
+    height: 100%;
+    flex-direction: column;
+}
+
+.unity-base-text-field__input {
+    color: rgb(0, 0, 0);
+}
+
+.unity-base-field__input {
+}
+
+.unity-integer-field__input {
+}
+
+.unity-float-field {
+}
+
+.CurrentValue {
+    margin-left: 3px;
+    margin-right: 0;
+    width: 15%;
+    align-items: flex-end;
+    flex-direction: row-reverse;
+}
+
+.GradientLightColor {
+    height: 25px;
+    min-height: 20px;
+    margin-left: 0;
+    margin-right: 2px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.unity-foldout {
+    border-left-color: rgb(140, 140, 140);
+    border-right-color: rgb(140, 140, 140);
+    border-top-color: rgb(140, 140, 140);
+    border-bottom-color: rgb(140, 140, 140);
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
